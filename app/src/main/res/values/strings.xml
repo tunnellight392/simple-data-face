@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Simple Data Face</string>
+    <string name="watch_face_name">Simple Data Face</string>
+
+    <string name="comp_top_left">Top left</string>
+    <string name="comp_top_center">Top center</string>
+    <string name="comp_top_right">Top right</string>
+    <string name="comp_bottom_left">Bottom left</string>
+    <string name="comp_bottom_center">Bottom center</string>
+    <string name="comp_bottom_right">Bottom right</string>
+
+    <!-- Watch face customization (editor) -->
+    <string name="config_aod_complications">Complications in always-on</string>
+</resources>

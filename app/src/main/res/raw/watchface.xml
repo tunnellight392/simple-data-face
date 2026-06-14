@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WatchFace width="450" height="450">
+    <Metadata key="CLOCK_TYPE" value="DIGITAL"/>
+    <Metadata key="PREVIEW_TIME" value="10:08:32"/>
+
+    <!-- ============ EDITOR CONFIGURATION PAGES ============ -->
+    <!-- Each configuration appears as a page in the watch face customize screen.
+         aodComplications: when FALSE (default), complications are hidden in
+         always-on/ambient; when TRUE they remain visible. -->
+    <UserConfigurations>
+        <BooleanConfiguration id="aodComplications"
+            displayName="config_aod_complications"
+            screenReaderText="config_aod_complications"
+            defaultValue="FALSE"/>
+    </UserConfigurations>
+
+    <Scene backgroundColor="#ff000000">
+
+        <!-- ============ TOP ROW COMPLICATIONS ============ -->
+        <ComplicationSlot x="72" y="54" width="96" height="96" slotId="1" displayName="comp_top_left"
+            supportedTypes="SHORT_TEXT RANGED_VALUE MONOCHROMATIC_IMAGE SMALL_IMAGE EMPTY">
+            <DefaultProviderPolicy defaultSystemProvider="WATCH_BATTERY" defaultSystemProviderType="SHORT_TEXT"/>
+            <BoundingOval x="0" y="0" width="96" height="96" outlinePadding="2.0"/>
+            <Complication type="SHORT_TEXT">
+                <Condition>
+                    <Expressions>
+                        <Expression name="hasIcon"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
+                    </Expressions>
+                    <Compare expression="hasIcon">
+                        <PartImage x="35" y="17" width="26" height="26" tintColor="#ffffffff">
+                            <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                        </PartImage>
+                        <PartText x="0" y="48" width="96" height="34">
+                            <Text align="CENTER" ellipsis="TRUE">
+                                <Font family="SYNC_TO_DEVICE" size="24" color="#ffffffff">
+                                    <Template><![CDATA[%s]]><Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Compare>
+                    <Default>
+                        <PartText x="0" y="29" width="96" height="38">
+                            <Text align="CENTER" ellipsis="TRUE">
+                                <Font family="SYNC_TO_DEVICE" size="26" color="#ffffffff">
+                                    <Template><![CDATA[%s]]><Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Default>
+                </Condition>
+            </Complication>
+            <Complication type="RANGED_VALUE">
+                <Condition>
+                    <Expressions>
+                        <Expression name="hasIcon"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
+                    </Expressions>
+                    <Compare expression="hasIcon">
+                        <PartImage x="35" y="17" width="26" height="26" tintColor="#ffffffff">
+                            <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                        </PartImage>
+                        <PartText x="0" y="48" width="96" height="34">
+                            <Text align="CENTER" ellipsis="TRUE">
+                                <Font family="SYNC_TO_DEVICE" size="24" color="#ffffffff">
+                                    <Template><![CDATA[%s]]><Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Compare>
+                    <Default>
+                        <PartText x="0" y="29" width="96" height="38">
+                            <Text align="CENTER" ellipsis="TRUE">
+                                <Font family="SYNC_TO_DEVICE" size="26" color="#ffffffff">
+                                    <Template><![CDATA[%s]]><Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Default>
+                </Condition>
+            </Complication>
+            <Complication type="MONOCHROMATIC_IMAGE">
+                <PartImage x="26" y="26" width="43" height="43" tintColor="#ffffffff">
+                    <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                </PartImage>
+            </Complication>
+            <Complication type="SMALL_IMAGE">
+                <PartImage x="18" y="18" width="60" height="60">
+                    <Image resource="[COMPLICATION.SMALL_IMAGE]"/>
+                </PartImage>
+            </Complication>
+        </ComplicationSlot>
+
+        <ComplicationSlot x="177" y="54" width="96" height="96" slotId="2" displayName="comp_top_center"
+            supportedTypes="SHORT_TEXT RANGED_VALUE MONOCHROMATIC_IMAGE SMALL_IMAGE EMPTY">
+            <DefaultProviderPolicy defaultSystemProvider="DAY_OF_WEEK" defaultSystemProviderType="SHORT_TEXT"/>
+            <BoundingOval x="0" y="0" width="96" height="96" outlinePadding="2.0"/>
+            <Complication type="SHORT_TEXT">
+                <Condition>
+                    <Expressions>
+                        <Expression name="hasIcon"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
+                    </Expressions>
+                    <Compare expression="hasIcon">
+                        <PartImage x="35" y="17" width="26" height="26" tintColor="#ffffffff">
+                            <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                        </PartImage>
+                        <PartText x="0" y="48" width="96" height="34">
+                            <Text align="CENTER" ellipsis="TRUE">
+                                <Font family="SYNC_TO_DEVICE" size="24" color="#ffffffff">
+                                    <Template><![CDATA[%s]]><Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Compare>
+                    <Default>
+                        <PartText x="0" y="29" width="96" height="38">
+                            <Text align="CENTER" ellipsis="TRUE">
+                                <Font family="SYNC_TO_DEVICE" size="26" color="#ffffffff">
+                                    <Template><![CDATA[%s]]><Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Default>
+                </Condition>
+            </Complication>
+            <Complication type="RANGED_VALUE">
+                <Condition>
+                    <Expressions>
+                        <Expression name="hasIcon"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
+                    </Expressions>
+                    <Compare expression="hasIcon">
+                        <PartImage x="35" y="17" width="26" height="26" tintColor="#ffffffff">
+                            <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                        </PartImage>
+                        <PartText x="0" y="48" width="96" height="34">
+                            <Text align="CENTER" ellipsis="TRUE">
+                                <Font family="SYNC_TO_DEVICE" size="24" color="#ffffffff">
+                                    <Template><![CDATA[%s]]><Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Compare>
+                    <Default>
+                        <PartText x="0" y="29" width="96" height="38">
+                            <Text align="CENTER" ellipsis="TRUE">
+                                <Font family="SYNC_TO_DEVICE" size="26" color="#ffffffff">
+                                    <Template><![CDATA[%s]]><Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Default>
+                </Condition>
+            </Complication>
+            <Complication type="MONOCHROMATIC_IMAGE">
+                <PartImage x="26" y="26" width="43" height="43" tintColor="#ffffffff">
+                    <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                </PartImage>
+            </Complication>
+            <Complication type="SMALL_IMAGE">
+                <PartImage x="18" y="18" width="60" height="60">
+                    <Image resource="[COMPLICATION.SMALL_IMAGE]"/>
+                </PartImage>
+            </Complication>
+        </ComplicationSlot>
+
+        <!-- STEPS: always shows the footprints icon above the value -->
+        <ComplicationSlot x="282" y="54" width="96" height="96" slotId="3" displayName="comp_top_right"
+            supportedTypes="SHORT_TEXT RANGED_VALUE MONOCHROMATIC_IMAGE SMALL_IMAGE EMPTY">
+            <DefaultProviderPolicy defaultSystemProvider="STEP_COUNT" defaultSystemProviderType="SHORT_TEXT"/>
+            <BoundingOval x="0" y="0" width="96" height="96" outlinePadding="2.0"/>
+            <Complication type="SHORT_TEXT">
+                <Condition>
+                    <Expressions>
+                        <Expression name="hasIcon"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
+                    </Expressions>
+                    <Compare expression="hasIcon">
+                        <PartImage x="35" y="17" width="26" height="26" tintColor="#ffffffff">
+                            <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                        </PartImage>
+                        <PartText x="0" y="48" width="96" height="34">
+                            <Text align="CENTER" ellipsis="TRUE">
+                                <Font family="SYNC_TO_DEVICE" size="24" color="#ffffffff">
+                                    <Template><![CDATA[%s]]><Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Compare>
+                    <Default>
+                        <PartImage x="35" y="16" width="26" height="26">
+                            <Image resource="ic_footsteps"/>
+                        </PartImage>
+                        <PartText x="0" y="48" width="96" height="34">
+                            <Text align="CENTER" ellipsis="TRUE">
+                                <Font family="SYNC_TO_DEVICE" size="24" color="#ffffffff">
+                                    <Template><![CDATA[%s]]><Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Default>
+                </Condition>
+            </Complication>
+            <Complication type="RANGED_VALUE">
+                <Condition>
+                    <Expressions>
+                        <Expression name="hasIcon"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
+                    </Expressions>
+                    <Compare expression="hasIcon">
+                        <PartImage x="35" y="17" width="26" height="26" tintColor="#ffffffff">
+                            <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                        </PartImage>
+                        <PartText x="0" y="48" width="96" height="34">
+                            <Text align="CENTER" ellipsis="TRUE">
+                                <Font family="SYNC_TO_DEVICE" size="24" color="#ffffffff">
+                                    <Template><![CDATA[%s]]><Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Compare>
+                    <Default>
+                        <PartImage x="35" y="16" width="26" height="26">
+                            <Image resource="ic_footsteps"/>
+                        </PartImage>
+                        <PartText x="0" y="48" width="96" height="34">
+                            <Text align="CENTER" ellipsis="TRUE">
+                                <Font family="SYNC_TO_DEVICE" size="24" color="#ffffffff">
+                                    <Template><![CDATA[%s]]><Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Default>
+                </Condition>
+            </Complication>
+            <Complication type="MONOCHROMATIC_IMAGE">
+                <PartImage x="26" y="26" width="43" height="43" tintColor="#ffffffff">
+                    <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                </PartImage>
+            </Complication>
+            <Complication type="SMALL_IMAGE">
+                <PartImage x="18" y="18" width="60" height="60">
+                    <Image resource="[COMPLICATION.SMALL_IMAGE]"/>
+                </PartImage>
+            </Complication>
+        </ComplicationSlot>
+
+        <!-- ============ BOTTOM ROW COMPLICATIONS ============ -->
+        <ComplicationSlot x="72" y="300" width="96" height="96" slotId="4" displayName="comp_bottom_left"
+            supportedTypes="SHORT_TEXT RANGED_VALUE MONOCHROMATIC_IMAGE SMALL_IMAGE EMPTY">
+            <DefaultProviderPolicy defaultSystemProvider="DATE" defaultSystemProviderType="SHORT_TEXT"/>
+            <BoundingOval x="0" y="0" width="96" height="96" outlinePadding="2.0"/>
+            <Complication type="SHORT_TEXT">
+                <Condition>
+                    <Expressions>
+                        <Expression name="hasIcon"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
+                    </Expressions>
+                    <Compare expression="hasIcon">
+                        <PartImage x="35" y="17" width="26" height="26" tintColor="#ffffffff">
+                            <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                        </PartImage>
+                        <PartText x="0" y="48" width="96" height="34">
+                            <Text align="CENTER" ellipsis="TRUE">
+                                <Font family="SYNC_TO_DEVICE" size="24" color="#ffffffff">
+                                    <Template><![CDATA[%s]]><Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Compare>
+                    <Default>
+                        <PartText x="0" y="29" width="96" height="38">
+                            <Text align="CENTER" ellipsis="TRUE">
+                                <Font family="SYNC_TO_DEVICE" size="26" color="#ffffffff">
+                                    <Template><![CDATA[%s]]><Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Default>
+                </Condition>
+            </Complication>
+            <Complication type="RANGED_VALUE">
+                <Condition>
+                    <Expressions>
+                        <Expression name="hasIcon"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
+                    </Expressions>
+                    <Compare expression="hasIcon">
+                        <PartImage x="35" y="17" width="26" height="26" tintColor="#ffffffff">
+                            <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                        </PartImage>
+                        <PartText x="0" y="48" width="96" height="34">
+                            <Text align="CENTER" ellipsis="TRUE">
+                                <Font family="SYNC_TO_DEVICE" size="24" color="#ffffffff">
+                                    <Template><![CDATA[%s]]><Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Compare>
+                    <Default>
+                        <PartText x="0" y="29" width="96" height="38">
+                            <Text align="CENTER" ellipsis="TRUE">
+                                <Font family="SYNC_TO_DEVICE" size="26" color="#ffffffff">
+                                    <Template><![CDATA[%s]]><Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Default>
+                </Condition>
+            </Complication>
+            <Complication type="MONOCHROMATIC_IMAGE">
+                <PartImage x="26" y="26" width="43" height="43" tintColor="#ffffffff">
+                    <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                </PartImage>
+            </Complication>
+            <Complication type="SMALL_IMAGE">
+                <PartImage x="18" y="18" width="60" height="60">
+                    <Image resource="[COMPLICATION.SMALL_IMAGE]"/>
+                </PartImage>
+            </Complication>
+        </ComplicationSlot>
+
+        <!-- HEART RATE: always shows the heart icon above the value -->
+        <ComplicationSlot x="177" y="300" width="96" height="96" slotId="5" displayName="comp_bottom_center"
+            supportedTypes="SHORT_TEXT RANGED_VALUE MONOCHROMATIC_IMAGE SMALL_IMAGE EMPTY">
+            <DefaultProviderPolicy defaultSystemProvider="HEART_RATE" defaultSystemProviderType="SHORT_TEXT"/>
+            <BoundingOval x="0" y="0" width="96" height="96" outlinePadding="2.0"/>
+            <Complication type="SHORT_TEXT">
+                <Condition>
+                    <Expressions>
+                        <Expression name="hasIcon"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
+                    </Expressions>
+                    <Compare expression="hasIcon">
+                        <PartImage x="35" y="17" width="26" height="26" tintColor="#ffffffff">
+                            <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                        </PartImage>
+                        <PartText x="0" y="48" width="96" height="34">
+                            <Text align="CENTER" ellipsis="TRUE">
+                                <Font family="SYNC_TO_DEVICE" size="24" color="#ffffffff">
+                                    <Template><![CDATA[%s]]><Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Compare>
+                    <Default>
+                        <PartImage x="35" y="16" width="26" height="26">
+                            <Image resource="ic_heart"/>
+                        </PartImage>
+                        <PartText x="0" y="48" width="96" height="34">
+                            <Text align="CENTER" ellipsis="TRUE">
+                                <Font family="SYNC_TO_DEVICE" size="24" color="#ffffffff">
+                                    <Template><![CDATA[%s]]><Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Default>
+                </Condition>
+            </Complication>
+            <Complication type="RANGED_VALUE">
+                <Condition>
+                    <Expressions>
+                        <Expression name="hasIcon"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
+                    </Expressions>
+                    <Compare expression="hasIcon">
+                        <PartImage x="35" y="17" width="26" height="26" tintColor="#ffffffff">
+                            <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                        </PartImage>
+                        <PartText x="0" y="48" width="96" height="34">
+                            <Text align="CENTER" ellipsis="TRUE">
+                                <Font family="SYNC_TO_DEVICE" size="24" color="#ffffffff">
+                                    <Template><![CDATA[%s]]><Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Compare>
+                    <Default>
+                        <PartImage x="35" y="16" width="26" height="26">
+                            <Image resource="ic_heart"/>
+                        </PartImage>
+                        <PartText x="0" y="48" width="96" height="34">
+                            <Text align="CENTER" ellipsis="TRUE">
+                                <Font family="SYNC_TO_DEVICE" size="24" color="#ffffffff">
+                                    <Template><![CDATA[%s]]><Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Default>
+                </Condition>
+            </Complication>
+            <Complication type="MONOCHROMATIC_IMAGE">
+                <PartImage x="26" y="26" width="43" height="43" tintColor="#ffffffff">
+                    <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                </PartImage>
+            </Complication>
+            <Complication type="SMALL_IMAGE">
+                <PartImage x="18" y="18" width="60" height="60">
+                    <Image resource="[COMPLICATION.SMALL_IMAGE]"/>
+                </PartImage>
+            </Complication>
+        </ComplicationSlot>
+
+        <ComplicationSlot x="282" y="300" width="96" height="96" slotId="6" displayName="comp_bottom_right"
+            supportedTypes="SHORT_TEXT RANGED_VALUE MONOCHROMATIC_IMAGE SMALL_IMAGE EMPTY">
+            <DefaultProviderPolicy defaultSystemProvider="UNREAD_NOTIFICATION_COUNT" defaultSystemProviderType="SHORT_TEXT"/>
+            <BoundingOval x="0" y="0" width="96" height="96" outlinePadding="2.0"/>
+            <Complication type="SHORT_TEXT">
+                <Condition>
+                    <Expressions>
+                        <Expression name="hasIcon"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
+                    </Expressions>
+                    <Compare expression="hasIcon">
+                        <PartImage x="35" y="17" width="26" height="26" tintColor="#ffffffff">
+                            <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                        </PartImage>
+                        <PartText x="0" y="48" width="96" height="34">
+                            <Text align="CENTER" ellipsis="TRUE">
+                                <Font family="SYNC_TO_DEVICE" size="24" color="#ffffffff">
+                                    <Template><![CDATA[%s]]><Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Compare>
+                    <Default>
+                        <PartText x="0" y="29" width="96" height="38">
+                            <Text align="CENTER" ellipsis="TRUE">
+                                <Font family="SYNC_TO_DEVICE" size="26" color="#ffffffff">
+                                    <Template><![CDATA[%s]]><Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Default>
+                </Condition>
+            </Complication>
+            <Complication type="RANGED_VALUE">
+                <Condition>
+                    <Expressions>
+                        <Expression name="hasIcon"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
+                    </Expressions>
+                    <Compare expression="hasIcon">
+                        <PartImage x="35" y="17" width="26" height="26" tintColor="#ffffffff">
+                            <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                        </PartImage>
+                        <PartText x="0" y="48" width="96" height="34">
+                            <Text align="CENTER" ellipsis="TRUE">
+                                <Font family="SYNC_TO_DEVICE" size="24" color="#ffffffff">
+                                    <Template><![CDATA[%s]]><Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Compare>
+                    <Default>
+                        <PartText x="0" y="29" width="96" height="38">
+                            <Text align="CENTER" ellipsis="TRUE">
+                                <Font family="SYNC_TO_DEVICE" size="26" color="#ffffffff">
+                                    <Template><![CDATA[%s]]><Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                                </Font>
+                            </Text>
+                        </PartText>
+                    </Default>
+                </Condition>
+            </Complication>
+            <Complication type="MONOCHROMATIC_IMAGE">
+                <PartImage x="26" y="26" width="43" height="43" tintColor="#ffffffff">
+                    <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                </PartImage>
+            </Complication>
+            <Complication type="SMALL_IMAGE">
+                <PartImage x="18" y="18" width="60" height="60">
+                    <Image resource="[COMPLICATION.SMALL_IMAGE]"/>
+                </PartImage>
+            </Complication>
+        </ComplicationSlot>
+
+        <!-- ============ AOD COMPLICATION HIDE PANELS ============ -->
+        <!-- These render AFTER the complications (so they cover them) but only in
+             ambient mode, and only when the user has NOT enabled "Complications in
+             always-on". Pure black on the black background = the complications
+             vanish in always-on. When the toggle is TRUE, no panels are drawn. -->
+        <BooleanConfiguration id="aodComplications">
+            <BooleanOption id="FALSE">
+                <PartDraw x="0" y="0" width="450" height="160" alpha="0">
+                    <Variant mode="AMBIENT" target="alpha" value="255"/>
+                    <Rectangle x="0" y="0" width="450" height="160">
+                        <Fill color="#ff000000"/>
+                    </Rectangle>
+                </PartDraw>
+                <PartDraw x="0" y="290" width="450" height="160" alpha="0">
+                    <Variant mode="AMBIENT" target="alpha" value="255"/>
+                    <Rectangle x="0" y="0" width="450" height="160">
+                        <Fill color="#ff000000"/>
+                    </Rectangle>
+                </PartDraw>
+            </BooleanOption>
+            <BooleanOption id="TRUE">
+            </BooleanOption>
+        </BooleanConfiguration>
+
+        <!-- ============ CENTER TIME ============ -->
+        <!-- Time is right-aligned to a fixed right edge so the AM/PM marker can sit
+             immediately to its right, vertically centered with the digits. -->
+        <DigitalClock x="0" y="165" width="450" height="120">
+            <!-- ONE hours:minutes element for both modes. Interactive it is right-
+                 aligned (right edge at 343, leaving room for the seconds + AM/PM on
+                 the right). In ambient those are gone, so the same element slides
+                 right to sit centered. Animating a single element gives a smooth
+                 transition instead of cross-fading two copies at different x. -->
+            <TimeText format="hh:mm" hourFormat="12" align="END" x="0" y="0" width="343" height="120" alpha="255">
+                <Variant mode="AMBIENT" target="x" value="30" interpolation="EASE_IN_OUT"/>
+                <Font family="SYNC_TO_DEVICE" size="116" weight="NORMAL" slant="NORMAL" color="#ffffffff"/>
+            </TimeText>
+            <!-- Seconds: fade out in place (no off-screen slide). -->
+            <TimeText format="ss" align="START" x="355" y="11" width="95" height="46" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="0" interpolation="EASE_IN_OUT"/>
+                <Font family="SYNC_TO_DEVICE" size="40" weight="NORMAL" slant="NORMAL" color="#ffbbbbbb"/>
+            </TimeText>
+        </DigitalClock>
+
+        <!-- ============ AM / PM (right of the time) ============ -->
+        <Group x="355" y="232" width="95" height="46" name="am_pm">
+            <Condition>
+                <Expressions>
+                    <Expression name="isPm"><![CDATA[[AMPM_STATE] == 1]]></Expression>
+                </Expressions>
+                <Compare expression="isPm">
+                    <PartText x="0" y="0" width="95" height="46">
+                        <Variant mode="AMBIENT" target="alpha" value="0" interpolation="EASE_IN_OUT"/>
+                        <Text align="START">
+                            <Font family="SYNC_TO_DEVICE" size="30" weight="NORMAL" color="#ffcccccc">
+                                <Template><![CDATA[PM]]></Template>
+                            </Font>
+                        </Text>
+                    </PartText>
+                </Compare>
+                <Default>
+                    <PartText x="0" y="0" width="95" height="46">
+                        <Variant mode="AMBIENT" target="alpha" value="0" interpolation="EASE_IN_OUT"/>
+                        <Text align="START">
+                            <Font family="SYNC_TO_DEVICE" size="30" weight="NORMAL" color="#ffcccccc">
+                                <Template><![CDATA[AM]]></Template>
+                            </Font>
+                        </Text>
+                    </PartText>
+                </Default>
+            </Condition>
+        </Group>
+
+    </Scene>
+</WatchFace>
