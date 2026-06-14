@@ -14,6 +14,7 @@
     <string name="config_aod_complications">Complications in always-on</string>
     <string name="config_time_color">Time color</string>
     <string name="config_complication_color">Complication color</string>
+    <string name="config_ring_color">Activity ring color</string>
 
     <!-- Color option names -->
     <string name="color_white">White</string>
