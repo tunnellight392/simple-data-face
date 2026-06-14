@@ -12,6 +12,11 @@
             displayName="config_aod_complications"
             screenReaderText="config_aod_complications"
             defaultValue="FALSE"/>
+        <!-- Show/hide the edge activity ring entirely. -->
+        <BooleanConfiguration id="showActivityRing"
+            displayName="config_show_ring"
+            screenReaderText="config_show_ring"
+            defaultValue="TRUE"/>
         <!-- Time color picker. Each option is a single ARGB color referenced as
              [CONFIGURATION.timeColor]. Default white = unchanged look. -->
         <ColorConfiguration id="timeColor"
@@ -68,22 +73,29 @@
              ([CONFIGURATION.ringColor]) and thickness. Ambient visibility follows the
              "Complications in always-on" toggle via the black cover arc in the FALSE
              branch of the AOD section below. -->
-        <!-- Dim full-circle track behind the progress arc. -->
-        <PartDraw x="0" y="0" width="450" height="450" alpha="255">
-            <Arc centerX="225" centerY="225" width="422" height="422" startAngle="0" endAngle="360">
-                <Stroke color="#33ffffff" thickness="14"/>
-            </Arc>
-        </PartDraw>
-        <!-- Progress arc: steps toward the daily step goal. Computed from STEP_COUNT /
-             STEP_GOAL directly (more reliable than STEP_PERCENT, which reads 0 when no
-             goal is configured). The ternary falls back to a 10000 goal if STEP_GOAL
-             is 0, and clamp completes the ring at 100% without overshooting. -->
-        <PartDraw x="0" y="0" width="450" height="450" alpha="255">
-            <Arc centerX="225" centerY="225" width="422" height="422" startAngle="0" endAngle="0">
-                <Transform target="endAngle" value="clamp([STEP_COUNT] / ([STEP_GOAL] &gt; 0 ? [STEP_GOAL] : 10000), 0, 1) * 360"/>
-                <Stroke color="[CONFIGURATION.ringColor]" thickness="14"/>
-            </Arc>
-        </PartDraw>
+        <!-- The whole ring is shown only when the "Activity ring" toggle is on. -->
+        <BooleanConfiguration id="showActivityRing">
+            <BooleanOption id="TRUE">
+                <!-- Dim full-circle track behind the progress arc. -->
+                <PartDraw x="0" y="0" width="450" height="450" alpha="255">
+                    <Arc centerX="225" centerY="225" width="422" height="422" startAngle="0" endAngle="360">
+                        <Stroke color="#33ffffff" thickness="14"/>
+                    </Arc>
+                </PartDraw>
+                <!-- Progress arc: steps toward the daily step goal. Computed from STEP_COUNT /
+                     STEP_GOAL directly (more reliable than STEP_PERCENT, which reads 0 when no
+                     goal is configured). The ternary falls back to a 10000 goal if STEP_GOAL
+                     is 0, and clamp completes the ring at 100% without overshooting. -->
+                <PartDraw x="0" y="0" width="450" height="450" alpha="255">
+                    <Arc centerX="225" centerY="225" width="422" height="422" startAngle="0" endAngle="0">
+                        <Transform target="endAngle" value="clamp([STEP_COUNT] / ([STEP_GOAL] &gt; 0 ? [STEP_GOAL] : 10000), 0, 1) * 360"/>
+                        <Stroke color="[CONFIGURATION.ringColor]" thickness="14"/>
+                    </Arc>
+                </PartDraw>
+            </BooleanOption>
+            <BooleanOption id="FALSE">
+            </BooleanOption>
+        </BooleanConfiguration>
 
         <!-- ============ EXTRA COMPLICATION (above the top-center one) ============ -->
         <!-- Small slot tucked between the screen top and the top row, centered. -->
