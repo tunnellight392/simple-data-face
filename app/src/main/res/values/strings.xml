@@ -8,6 +8,7 @@
     <string name="comp_bottom_left">Bottom left</string>
     <string name="comp_bottom_center">Bottom center</string>
     <string name="comp_bottom_right">Bottom right</string>
+    <string name="comp_top_above_center">Top center (upper)</string>
 
     <!-- Watch face customization (editor) -->
     <string name="config_aod_complications">Complications in always-on</string>
