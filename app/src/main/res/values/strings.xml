@@ -12,6 +12,7 @@
 
     <!-- Watch face customization (editor) -->
     <string name="config_aod_complications">Complications in always-on</string>
+    <string name="config_show_ring">Activity ring</string>
     <string name="config_time_color">Time color</string>
     <string name="config_complication_color">Complication color</string>
     <string name="config_ring_color">Activity ring color</string>
