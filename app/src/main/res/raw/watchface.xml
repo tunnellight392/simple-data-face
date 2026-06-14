@@ -47,6 +47,42 @@
 
     <Scene backgroundColor="#ff000000">
 
+        <!-- ============ EXTRA COMPLICATION (above the top-center one) ============ -->
+        <!-- Small slot tucked between the screen top and the top row, centered. -->
+        <ComplicationSlot x="201" y="12" width="48" height="48" slotId="7" displayName="comp_top_above_center"
+            supportedTypes="SHORT_TEXT RANGED_VALUE MONOCHROMATIC_IMAGE SMALL_IMAGE EMPTY">
+            <DefaultProviderPolicy defaultSystemProvider="DAY_OF_WEEK" defaultSystemProviderType="SHORT_TEXT"/>
+            <BoundingOval x="0" y="0" width="48" height="48" outlinePadding="2.0"/>
+            <Complication type="SHORT_TEXT">
+                <PartText x="0" y="0" width="48" height="48">
+                    <Text ellipsis="TRUE">
+                        <Font family="SYNC_TO_DEVICE" size="20" color="[CONFIGURATION.complicationColor]">
+                            <Template><![CDATA[%s]]><Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                        </Font>
+                    </Text>
+                </PartText>
+            </Complication>
+            <Complication type="RANGED_VALUE">
+                <PartText x="0" y="0" width="48" height="48">
+                    <Text ellipsis="TRUE">
+                        <Font family="SYNC_TO_DEVICE" size="20" color="[CONFIGURATION.complicationColor]">
+                            <Template><![CDATA[%s]]><Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                        </Font>
+                    </Text>
+                </PartText>
+            </Complication>
+            <Complication type="MONOCHROMATIC_IMAGE">
+                <PartImage x="12" y="12" width="24" height="24" tintColor="[CONFIGURATION.complicationColor]">
+                    <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
+                </PartImage>
+            </Complication>
+            <Complication type="SMALL_IMAGE">
+                <PartImage x="9" y="9" width="30" height="30">
+                    <Image resource="[COMPLICATION.SMALL_IMAGE]"/>
+                </PartImage>
+            </Complication>
+        </ComplicationSlot>
+
         <!-- ============ TOP ROW COMPLICATIONS ============ -->
         <ComplicationSlot x="72" y="54" width="96" height="96" slotId="1" displayName="comp_top_left"
             supportedTypes="SHORT_TEXT RANGED_VALUE MONOCHROMATIC_IMAGE SMALL_IMAGE EMPTY">
