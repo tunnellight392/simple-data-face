@@ -11,4 +11,17 @@
 
     <!-- Watch face customization (editor) -->
     <string name="config_aod_complications">Complications in always-on</string>
+    <string name="config_time_color">Time color</string>
+    <string name="config_complication_color">Complication color</string>
+
+    <!-- Color option names -->
+    <string name="color_white">White</string>
+    <string name="color_red">Red</string>
+    <string name="color_orange">Orange</string>
+    <string name="color_yellow">Yellow</string>
+    <string name="color_green">Green</string>
+    <string name="color_cyan">Cyan</string>
+    <string name="color_blue">Blue</string>
+    <string name="color_purple">Purple</string>
+    <string name="color_pink">Pink</string>
 </resources>
