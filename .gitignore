@@ -13,3 +13,9 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Signing — keep keystore and credentials out of source control
+keystore.properties
+keystore/
+*.jks
+*.keystore
